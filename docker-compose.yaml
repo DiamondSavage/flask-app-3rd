@@ -2,10 +2,14 @@ services:
   flask-app:
     build: .
     container_name: flask-app
+
     ports:
       - "5000:5000"
 
     volumes:
       - .:/app
+
+    environment:
+      APP_ENV: Development
 
     restart: unless-stopped
